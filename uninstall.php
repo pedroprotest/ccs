@@ -1,0 +1,23 @@
+<?php
+/**
+ * The code in this file runs when a plugin is uninstalled from the WordPress dashboard.
+ */
+
+// If uninstall is not called from WordPress exit.
+if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit ();
+}
+
+/* Place uninstall code below here. */
+
+
+/*$option_name = 'wporg_option';
+
+delete_option($option_name);
+
+// for site options in Multisite
+delete_site_option($option_name);
+
+// drop a custom database table
+global $wpdb;
+$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}mytable");*/
