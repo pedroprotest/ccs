@@ -31,20 +31,24 @@ $secondaryFont: 'Roboto', sans-serif
       padding: 40px 20px
       background-color: rgba(22, 22, 22, 0.7)
       .logo-wrapper
-        max-width: 140px
-        min-width: 80px
         margin-right: 20px
+        img
+          max-width: 140px
+          min-width: 80px
+
       .main-content
         .status
           font-family: $primaryFont
           font-weight: 300
           color: rgba(25, 177, 135, 1)
           margin-bottom: 10px
-        .title
-          .page-title
-            font-family: $primaryFont
-            font-weight: 700
-            margin-bottom: 20px
+        .page-title
+          font-family: $primaryFont
+          font-weight: 700
+          margin-bottom: 20px
+          color: #fff
+          &::after
+            display: none
         .description
           font-size: 14px
           line-height: 1.6
@@ -64,6 +68,7 @@ $secondaryFont: 'Roboto', sans-serif
           color: #161616
           font-weight: 700
   .footer-wrapper
+    z-index: 2
     position: absolute
     bottom: 0
     min-width: 100%

@@ -85,7 +85,7 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
         <header>
           <div class="logo-wrapper">
             <?php if (get_theme_mod('ccs_logo')) : ?>
-              <span class="logo"><img src="<?php echo esc_attr(get_theme_mod( 'ccs_logo')); ?>" alt="<?php bloginfo('name'); ?>"></span>
+              <img src="<?php echo esc_attr(get_theme_mod( 'ccs_logo')); ?>" alt="<?php bloginfo('name'); ?>">
             <?php else: ?>
               <span><?php bloginfo('name'); ?></span>
             <?php endif; ?>
@@ -103,13 +103,11 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
              ?>
              </span>
           </div>
-          <div class="title">
             <?php
               if ( !empty( get_theme_mod('ccs_page_heading') ) ) {
                 echo '<h1 class="page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
               }
             ?>
-          </div><!-- Title-End -->
           <div class="description">
             <?php
               if ( !empty( get_theme_mod('ccs_text') ) ) {
@@ -122,7 +120,7 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
       <div class="contacts-wrapper">
         <div class="contact">
           <?php echo '<p class="contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>'; ?>
-          <?php echo '<p class="phone"><span>'. __('Phone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>'; ?>
+          <?php echo '<p class="phone"><span>'. __('Telefone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>'; ?>
           <?php echo '<p class="email"><span>'. __('Email:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_email', 'you@email.com'), true) . '</p>'; ?>
         </div><!-- Contact-Wrapper-End -->
       </div><!-- Contact-Wrapper-End -->
