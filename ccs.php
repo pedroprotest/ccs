@@ -40,7 +40,6 @@ function ccs_skip_redirect_on_login () {
     if( get_theme_mod('ccs_status') != 0 ) {
       add_action( 'template_redirect', 'ccs_template_redirect' );
       add_action( 'admin_bar_menu', 'admin_bar_menu', 1000 );
-      add_action( 'admin_enqueue_scripts', 'add_scripts' );
     }
   }
 
@@ -93,14 +92,10 @@ function admin_bar_menu($str) {
 }
 
 function add_scripts() {
-  //wp_enqueue_style( 'ccs-adminbar', plugins_url( 'assets\css\adminbar-style.css' , __FILE__ ), false);
   wp_enqueue_style( 'ccs-adminbar', esc_url( plugins_url( 'assets\css\adminbar-style.css', __FILE__ ) ), false);
-
-  //wp_enqueue_style('ccs-adminbar-notification', plugins_url('assets/css/adminbar-style.css',__FILE__ ));
-  //wp_enqueue_style('ccs-adminbar-notificatione');
 }
-//add_action( 'admin_print_styles', 'add_scripts' );
 
+add_action( 'admin_enqueue_scripts', 'add_scripts' );
 
 // Add external link to Tools area
 function ccs_settings_link() {

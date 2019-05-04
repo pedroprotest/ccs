@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700|Roboto:400,700')
+
+$primaryFont: 'Raleway', sans-serif
+$secondaryFont: 'Roboto', sans-serif
+
+.site-wrapper
+  position: relative
+  overflow: hidden
+  font-family: $secondaryFont
+  .revslider-wrapper
+    z-index: 1
+  .page-wrapper
+    z-index: 2
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    width: 100%
+    min-width: 100%
+    color: white
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    .content-wrapper
+      display: flex
+      align-items: center
+      align-content: flex-start
+      justify-content: flex-start
+      margin: 0 auto
+      padding: 40px 20px
+      background-color: rgba(22, 22, 22, 0.7)
+      .logo-wrapper
+        max-width: 140px
+        min-width: 80px
+        margin-right: 20px
+      .main-content
+        .status
+          font-family: $primaryFont
+          font-weight: 300
+          color: rgba(25, 177, 135, 1)
+          margin-bottom: 10px
+        .title
+          .page-title
+            font-family: $primaryFont
+            font-weight: 700
+            margin-bottom: 20px
+        .description
+          font-size: 14px
+          line-height: 1.6
+
+    .contacts-wrapper
+      background-color: rgba(25, 177, 135, 0.9)
+      .contact
+        padding: 20px
+        p
+          color: #fff
+          font-size: 13px
+        .phone
+          margin-bottom: 5px
+        .email
+          margin-bottom: 0
+        span
+          color: #161616
+          font-weight: 700
+  .footer-wrapper
+    position: absolute
+    bottom: 0
+    min-width: 100%
+    width: 100%
+    padding: 20px 0
+    background-color: rgba(22, 22, 22, 0.9)
+    border-top: 4px solid rgba(25, 177, 135, 0.9)
+    text-align: center
+    font-size: 13px
+    color: #cbcbcb
+
+@media (max-width: 650px)
+  .site-wrapper
+    .page-wrapper
+      flex-direction: column
+      align-items: center
+      align-content: center
+      justify-content: center
+      .content-wrapper
+        padding: 20px
+        align-items: center
+        align-content: center
+        justify-content: center
+        .logo-wrapper
+          min-width: 80px
+          margin-right: 20px
+        .main-content
+          .title
+            .page-title
+              font-size: 18px
+              margin-bottom: 10px
+          .description
+            font-size: 13px
+            line-height: 1.6
+            display: none
+      .contacts-wrapper
+        width: 100%
+
+        background-color: rgba(231, 231, 231, 0.7)
+        .contact
+          padding: 20px
+          p
+            font-size: 12px
+            color: rgb(18, 18, 18)
+          .contacts-description
+            display: none
+    .footer-wrapper
+      padding: 20px 0
+      text-align: center
+      font-size: 11px

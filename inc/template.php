@@ -1,86 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+$favicon = '';
+
+if( !empty(get_theme_mod( 'ccs_favicon')) ) {
+  $favicon = esc_url(get_theme_mod( 'ccs_favicon'));
+}
+
+?>
+
+<!doctype html>
+
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<html <?php language_attributes(); ?> class="no-js">
 <head>
   <meta charset="utf-8">
+
+  <?php // force Internet Explorer to use the latest rendering engine available ?>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php bloginfo( 'name' ); $site_description = get_bloginfo( 'description' ); ?></title>
+
+  <?php // mobile meta (hooray!) ?>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
+  <!-- <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png"> -->
+  <link rel="icon" href="<?php echo $favicon ?>">
+
+  <!--[if IE]>
+  <link rel="shortcut icon" href="<?php echo $favicon ?>">
+  <![endif]-->
+  <?php // or, set /favicon.ico for IE10 win ?>
+  <!-- <meta name="msapplication-TileColor" content="#f01d4f"> -->
+  <!-- <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/win8-tile-icon.png"> -->
+  <meta name="theme-color" content="#121212">
+
+  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="stylesheet" href="<?php echo plugins_url('assets/css/style.css',dirname(__FILE__)); ?>">
-  <link rel='stylesheet' id='luunch_source_sans_pro-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700' type='text/css' media='all' />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script type='text/javascript' src='<?php echo plugins_url('assets/js/main.js',dirname(__FILE__)); ?>'></script>
 
+  <?php // wordpress head functions ?>
+  <?php wp_head(); ?>
+  <?php // end of wordpress head ?>
+
+  <?php // drop Google Analytics Here ?>
+  <?php // end analytics ?>
 
   <style type="text/css">
   body {
-  background-color:<?php echo esc_attr( get_theme_mod('ccs_background_color', '#f5f5f5') ); ?>;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  <?php if (get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) .'../assets/images/bg.jpg') ) : ?>
-  background-image:url("<?php echo esc_attr(get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) .'../assets/images/bg.jpg' )); ?>");
-  <?php endif ?>
+    background-color:<?php echo esc_attr( get_theme_mod( 'ccs_background_color', '#f5f5f5' ) ); ?>;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    <?php
+      if( !empty(get_theme_mod( 'ccs_background_image')) ) {
+        echo 'background-image:url('. esc_attr(get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) . '../assets/images/bg.jpg' )) . ')';
+      }
+    ?>
   }
-  <?php echo wp_kses(get_theme_mod( 'ccs_custom_css' ), true); ?>
+  <?php echo wp_kses( get_theme_mod( 'ccs_custom_css' ), true ); ?>
   </style>
 </head>
 
 <body>
-  <div id="body-background">
+  <div class="site-wrapper">
+    <div class="revslider-wrapper">
+      <?php
+        $sliderName = get_theme_mod('ccs_slider');
+        if ( !empty( $sliderName ) ) {
+          echo do_shortcode('[rev_slider alias='. $sliderName .']');
+        }
+      ?>
+    </div><!-- RevSlider-Wrapper-End -->
+    <div class="page-wrapper">
+      <div class="content-wrapper">
+        <header>
+          <div class="logo-wrapper">
+            <?php if (get_theme_mod('ccs_logo')) : ?>
+              <span class="logo"><img src="<?php echo esc_attr(get_theme_mod( 'ccs_logo')); ?>" alt="<?php bloginfo('name'); ?>"></span>
+            <?php else: ?>
+              <span><?php bloginfo('name'); ?></span>
+            <?php endif; ?>
+          </div><!-- Logo-Wrapper-End -->
+        </header><!-- Header-End -->
+        <main class="main-content">
+          <div class="status">
+            <span>
+            <?php
+              if( get_theme_mod('ccs_status') == 1 ) {
+                echo __('Brevemente', 'ccs');
+              } elseif ( get_theme_mod('ccs_status') == 2 ) {
+                echo __('Em Manutenção', 'ccs');
+              }
+             ?>
+             </span>
+          </div>
+          <div class="title">
+            <?php
+              if ( !empty( get_theme_mod('ccs_page_heading') ) ) {
+                echo '<h1 class="page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
+              }
+            ?>
+          </div><!-- Title-End -->
+          <div class="description">
+            <?php
+              if ( !empty( get_theme_mod('ccs_text') ) ) {
+                echo get_theme_mod('ccs_text');
+              }
+            ?>
+          </div><!-- Description-End -->
+        </main><!-- Main-Content-End -->
+      </div><!-- Content-Wrapper-End -->
+      <div class="contacts-wrapper">
+        <div class="contact">
+          <?php echo '<p class="contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>'; ?>
+          <?php echo '<p class="phone"><span>'. __('Phone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>'; ?>
+          <?php echo '<p class="email"><span>'. __('Email:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_email', 'you@email.com'), true) . '</p>'; ?>
+        </div><!-- Contact-Wrapper-End -->
+      </div><!-- Contact-Wrapper-End -->
 
-  <!-- Status: Shows if the subscription succeeded or not. -->
-  <div id="loading">
-    <span class="status icon"></span>
-  </div>
 
-  <header class="row" id="header">
-    <div class="content">
-      <?php if (get_theme_mod( 'ccs_plugin_logo', plugin_dir_url( __FILE__ ) .'../assets/images/logo.png') ) : ?>
-      <span class="logo"><img src="<?php echo esc_attr(get_theme_mod( 'ccs_plugin_logo', plugin_dir_url( __FILE__ ) .'../assets/images/logo.png' )); ?>" a;t="<?php bloginfo('name'); ?>"></span>
-      <?php else: ?>
-      <span><?php bloginfo('name'); ?></span>
-      <?php endif; ?>
-    </div>
-
-    <?php if (get_theme_mod( 'ccs_percentage_completed', '75') ) : ?>
-    <div class="status" style="width:  <?php echo esc_attr(get_theme_mod( 'ccs_percentage_completed', '75')); ?>%;">
-    <span><?php echo esc_attr(get_theme_mod( 'ccs_percentage_completed', '75')); ?>%</span>
-    <?php else: ?>
-    <div class="status">
-    <?php endif; ?>
-    </div>
-  </header>
-
-  <div class="row" id="intro">
-    <div class="content">
-
-      <div class="row" id="social">
-        <?php if (get_theme_mod( 'ccs_social_twitter', 'https://www.twitter.com/circathemes') ) : ?>
-        <a class="icon twitter" href="<?php echo esc_url(get_theme_mod( 'ccs_social_twitter', 'https://www.twitter.com/circathemes')); ?>" target="_blank"></a>
-        <?php endif; ?>
-
-        <?php if (get_theme_mod( 'ccs_social_facebook', 'https://www.facebook.com/circathemes') ) : ?>
-        <a class="icon facebook" href="<?php echo esc_url(get_theme_mod( 'ccs_social_facebook', 'https://www.facebook.com/circathemes')); ?>" target="_blank"></a>
-        <?php endif; ?>
-
-        <?php if (get_theme_mod( 'ccs_social_email', 'you@domain.com') ) : ?>
-        <a class="icon email" href="mailto:<?php echo esc_attr(get_theme_mod( 'ccs_social_email', 'you@domain.com')); ?>"></a>
-        <?php endif; ?>
-      </div><!-- c lose #social-->
-
-
-      <footer class="row">
-        <?php echo wp_kses(get_theme_mod( 'ccs_page_footer', 'Designed by <a href="http://www.leeflets.com" rel="nofollow" target="_blank">Jason Schuller</a> & Developed by <a href="http://www.wpkube.com/" rel="nofollow" target="_blank">WP Kube</a>' ), true); ?>
-      </footer>
-
-    </div>
-  </div>
-
-
-  </div>
+    </div><!-- Page-Wrapper-End -->
+    <footer class="footer-wrapper">
+      <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
+    </footer><!-- Footer-Wrapper-End -->
+  </div><!-- site-Wrapper-End -->
+ <?php wp_footer(); ?>
 </body>
 </html>

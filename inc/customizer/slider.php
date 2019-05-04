@@ -17,6 +17,7 @@ $wp_customize->add_setting( 'ccs_slider', array(
 // Control - Slider Shortcode
 $wp_customize->add_control( 'ccs_slider', array(
   'label'    => esc_html__( 'Slider Shortcode', 'ccs' ),
+  'description' => esc_html__( 'Insert the name of the slider, form Revolution Sliders', 'ccs' ),
   'section'  => 'ccs_section_slider',
   'type'     => 'text',
   'priority' => 10,

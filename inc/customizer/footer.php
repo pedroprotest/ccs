@@ -4,7 +4,7 @@
 $wp_customize->add_section( 'ccs_section_footer', array(
   'title'      => esc_html__( 'Footer', 'ccs' ),
   'panel'      => 'ccs_general_panel', // Not typically needed.
-  'priority'   => 8,
+  'priority'   => 9,
   )
 );
 
