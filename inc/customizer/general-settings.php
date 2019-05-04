@@ -54,7 +54,7 @@ $wp_customize->add_setting( 'ccs_primary_color', array(
 // Control - Primary Color
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ccs_primary_color', array(
   'label'    => esc_html__( 'Primary Color', 'ccs' ),
-  'section'  => 'ccs_section_background',
+  'section'  => 'ccs_section_general',
   'priority' => 20,
 ) ) );
 
