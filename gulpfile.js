@@ -13,6 +13,10 @@
     wpPot         = require('gulp-wp-pot'),
     sort          = require('gulp-sort'),
     notify        = require('gulp-notify'),
+    rename        = require('gulp-rename'),
+    lineec        = require('gulp-line-ending-corrector'),
+    filter        = require('gulp-filter'),
+    sourcemaps    = require('gulp-sourcemaps'),
 
     // Directory Locations
     dir = {
@@ -40,8 +44,8 @@
       watch       : dir.sassDir,
       build       : dir.cssDest,
       sassOpts : {
-        outputStyle     : 'nested',
-        precision       : 3,
+        outputStyle     : 'compact',
+        precision       : 10,
         errLogToConsole : true
       },
     },
@@ -73,10 +77,21 @@
   function css() {
     sass.compiler = require('node-sass');
     return gulp.src(cssOpts.src)
+      .pipe(sourcemaps.init())
       .pipe(sass(cssOpts.sassOpts).on('error', sass.logError))
+      .pipe(sourcemaps.write({includeContent: false}))
+      .pipe(sourcemaps.init({loadMaps: true}))
       .pipe(autoprefixer( autoPrefixerOpts ))
-      .pipe(minifycss( { maxLineLen: 10 }))
+      .pipe(sourcemaps.write('./'))
+      .pipe(lineec())
       .pipe(gulp.dest(cssOpts.build))
+      .pipe(filter('**/*.css'))
+      .pipe(browsersync.stream())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(minifycss({maxLineLen: 10}))
+      .pipe(lineec())
+      .pipe(gulp.dest(cssOpts.build))
+      .pipe(filter('**/*.css'))
       .pipe(browsersync.reload({ stream: true }))
       .pipe(notify({message: 'TASK: CSS Completed! 💯', onLast: true } ));
 
