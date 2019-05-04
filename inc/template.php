@@ -51,6 +51,7 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
 
   <?php // drop Google Analytics Here ?>
   <?php // end analytics ?>
+  <?php wp_head(); ?>
 
   <style type="text/css">
   body {
@@ -124,5 +125,6 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
       <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
     </footer><!-- Footer-Wrapper-End -->
   </div><!-- site-Wrapper-End -->
+<?php wp_footer(); z?>
 </body>
 </html>

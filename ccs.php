@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Coming Soons Page & Maintenance Mode
  * Plugin URI:  https://crew.pt
- * Description: Basic WordPress Plugin Header Comment
+ * Description: Custom Plugin to activat and manage Maintenance Modo and Coming Soon Page.
  * Version:     1.0.0
  * Author:      Crew
  * Author URI:  https://crew.pt
