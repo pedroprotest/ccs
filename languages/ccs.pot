@@ -32,12 +32,28 @@ msgstr ""
 msgid "Background Settings"
 msgstr ""
 
-#: inc/customizer/background.php:19
+#: inc/customizer/background.php:18
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer/background.php:33
+#: inc/customizer/background.php:31
 msgid "Background Image"
+msgstr ""
+
+#: inc/customizer/background.php:45
+msgid "Video .mp4 format"
+msgstr ""
+
+#: inc/customizer/background.php:58
+msgid "Video .webm format"
+msgstr ""
+
+#: inc/customizer/background.php:71
+msgid "Video .ogv format"
+msgstr ""
+
+#: inc/customizer/background.php:84
+msgid "Image Video Cover"
 msgstr ""
 
 #: inc/customizer/branding.php:5
@@ -174,4 +190,20 @@ msgstr ""
 
 #: inc/customizer/social-links.php:94
 msgid "Google+"
+msgstr ""
+
+#: inc/template.php:100
+msgid "Brevemente"
+msgstr ""
+
+#: inc/template.php:102
+msgid "Em Manutenção"
+msgstr ""
+
+#: inc/template.php:116
+msgid "Telefone:"
+msgstr ""
+
+#: inc/template.php:117
+msgid "Email:"
 msgstr ""
