@@ -12,7 +12,7 @@ function ccs_customizer( $wp_customize ) {
   require_once( 'customizer/page-settings.php' ); // 2
   require_once( 'customizer/branding.php' ); // 3
   require_once( 'customizer/background.php' ); // 4
-  require_once( 'customizer/slider.php' ); // 5
+  //require_once( 'customizer/slider.php' ); // 5
   require_once( 'customizer/social-links.php' ); // 6
   require_once( 'customizer/page-content.php' ); // 7
   require_once( 'customizer/contacts.php' ); // 8

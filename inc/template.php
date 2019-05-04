@@ -6,6 +6,11 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
   $favicon = esc_url(get_theme_mod( 'ccs_favicon'));
 }
 
+$videoCover = get_theme_mod( 'ccs_video_cover' );
+$videoMp4   = get_theme_mod( 'ccs_video_mp4' );
+$videoWebm  = get_theme_mod( 'ccs_video_webm' );
+$videoOgv   = get_theme_mod( 'ccs_video_ogv' );
+
 ?>
 
 <!doctype html>
@@ -26,6 +31,7 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#121212">
 
   <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
   <!-- <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png"> -->
@@ -37,15 +43,11 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
   <?php // or, set /favicon.ico for IE10 win ?>
   <!-- <meta name="msapplication-TileColor" content="#f01d4f"> -->
   <!-- <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/win8-tile-icon.png"> -->
-  <meta name="theme-color" content="#121212">
 
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="stylesheet" href="<?php echo plugins_url('assets/css/style.css',dirname(__FILE__)); ?>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script type='text/javascript' src='<?php echo plugins_url('assets/js/main.js',dirname(__FILE__)); ?>'></script>
-
-  <?php // wordpress head functions ?>
-  <?php wp_head(); ?>
-  <?php // end of wordpress head ?>
 
   <?php // drop Google Analytics Here ?>
   <?php // end analytics ?>
@@ -71,66 +73,56 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
 </head>
 
 <body>
-  <div class="site-wrapper">
-    <div class="revslider-wrapper">
-      <?php
-        $sliderName = get_theme_mod('ccs_slider');
-        if ( !empty( $sliderName ) ) {
-          echo do_shortcode('[rev_slider alias='. $sliderName .']');
-        }
-      ?>
-    </div><!-- RevSlider-Wrapper-End -->
-    <div class="page-wrapper">
-      <div class="content-wrapper">
-        <header>
-          <div class="logo-wrapper">
-            <?php if (get_theme_mod('ccs_logo')) : ?>
-              <img src="<?php echo esc_attr(get_theme_mod( 'ccs_logo')); ?>" alt="<?php bloginfo('name'); ?>">
-            <?php else: ?>
-              <span><?php bloginfo('name'); ?></span>
-            <?php endif; ?>
-          </div><!-- Logo-Wrapper-End -->
-        </header><!-- Header-End -->
-        <main class="main-content">
-          <div class="status">
-            <span>
-            <?php
-              if( get_theme_mod('ccs_status') == 1 ) {
-                echo __('Brevemente', 'ccs');
-              } elseif ( get_theme_mod('ccs_status') == 2 ) {
-                echo __('Em Manutenção', 'ccs');
-              }
-             ?>
-             </span>
-          </div>
-            <?php
-              if ( !empty( get_theme_mod('ccs_page_heading') ) ) {
-                echo '<h1 class="ccs-page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
-              }
-            ?>
-          <div class="description">
-            <?php
-              if ( !empty( get_theme_mod('ccs_text') ) ) {
-                echo get_theme_mod('ccs_text');
-              }
-            ?>
-          </div><!-- Description-End -->
+  <div class="ccs-site-wrapper">
+    <div class="ccs-video-overlay" style="background: url('<?php echo plugins_url( '../assets/images/dottedOverlay3x3.png', __FILE__ ); ?>') left top repeat"></div><!-- Video-Overlay-End -->
+    <?php
+      if( !empty($videoMp4) ) { ?>
+        <video loop autoplay muted id="ccs-video">
+          <source src="<?php echo $videoMp4; ?>" type="video/mp4">
+          <source src="<?php echo $videoWebm; ?>" type="video/webm">
+          <source src="<?php echo $videoOgv; ?>" type="video/ogv">
+        </video>
+        <script>
+            document.getElementById('ccs-video').play();
+        </script>
+      <?php }
+    ?>
+    <div class="ccs-content-wrapper">
+      <div class="ccs-content">
+        <?php
+          if ( !empty(get_theme_mod('ccs_logo') )) {
+            echo '<img src="' . esc_attr(get_theme_mod( 'ccs_logo')) . '" class="ccs-logo">';
+          }
+        ?>
+        <main class="ccs-content-details">
+          <?php
+            if( get_theme_mod('ccs_status') == 1 ) {
+              echo '<p class="ccs-status">' . __('Brevemente', 'ccs'). '</p>';
+            } elseif ( get_theme_mod('ccs_status') == 2 ) {
+              echo '<p class="status">' . __('Em Manutenção', 'ccs'). '</p>';
+            }
+            if ( !empty( get_theme_mod('ccs_page_heading')) ) {
+              echo '<h1 class="ccs-page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
+            }
+            if ( !empty( get_theme_mod('ccs_text')) ) {
+              echo '<p class="ccs-description">' . get_theme_mod('ccs_text') . '</p>';
+            }
+          ?>
         </main><!-- Main-Content-End -->
       </div><!-- Content-Wrapper-End -->
-      <div class="contacts-wrapper">
-        <div class="contact">
-          <?php echo '<p class="contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>'; ?>
-          <?php echo '<p class="phone"><span>'. __('Telefone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>'; ?>
-          <?php echo '<p class="email"><span>'. __('Email:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_email', 'you@email.com'), true) . '</p>'; ?>
-        </div><!-- Contact-Wrapper-End -->
-      </div><!-- Contact-Wrapper-End -->
+      <div class="ccs-contacts-wrapper">
+        <?php
+          echo '<p class="ccs-contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>';
+          echo '<p class="css-phone"><span>'. __('Telefone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>';
+          echo '<p class="cscs-email"><span>'. __('Email:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_email', 'you@email.com'), true) . '</p>';
+        ?>
+      </div><!-- Contacts-Wrapper-End -->
 
 
     </div><!-- Page-Wrapper-End -->
-    <footer class="footer-wrapper">
+    <footer class="ccs-footer-wrapper">
       <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
     </footer><!-- Footer-Wrapper-End -->
   </div><!-- site-Wrapper-End -->
- <?php wp_footer(); ?>
 </body>
 </html>

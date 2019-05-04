@@ -1,28 +1,27 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700|Roboto:400,700");.site-wrapper{position:relative;overflow:hidden;font-family:"Roboto",sans-serif}
-.site-wrapper .revslider-wrapper{z-index:1}
-.site-wrapper .page-wrapper{z-index:2;position:absolute;top:0;left:0;bottom:0;width:100%;min-width:100%;color:white;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
-.site-wrapper .page-wrapper .content-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;margin:0 auto;padding:40px 20px;background-color:rgba(22,22,22,0.7)}
-.site-wrapper .page-wrapper .content-wrapper .logo-wrapper{margin-right:20px}
-.site-wrapper .page-wrapper .content-wrapper .logo-wrapper img{max-width:140px;min-width:80px;width:140px}
-.site-wrapper .page-wrapper .content-wrapper .main-content .status{font-family:"Raleway",sans-serif;font-weight:300;color:#19b187;margin-bottom:10px}
-.site-wrapper .page-wrapper .content-wrapper .main-content .ccs-page-title{font-family:"Raleway",sans-serif;font-weight:700;margin-bottom:20px;color:#fff}
-.site-wrapper .page-wrapper .content-wrapper .main-content .ccs-page-title::after{display:none}
-.site-wrapper .page-wrapper .content-wrapper .main-content .description{font-size:14px;line-height:1.6}
-.site-wrapper .page-wrapper .contacts-wrapper{background-color:rgba(25,177,135,0.9)}
-.site-wrapper .page-wrapper .contacts-wrapper .contact{padding:20px}
-.site-wrapper .page-wrapper .contacts-wrapper .contact p{color:#fff;font-size:13px}
-.site-wrapper .page-wrapper .contacts-wrapper .contact .phone{margin-bottom:5px}
-.site-wrapper .page-wrapper .contacts-wrapper .contact .email{margin-bottom:0}
-.site-wrapper .page-wrapper .contacts-wrapper .contact span{color:#161616;font-weight:700}
-.site-wrapper .footer-wrapper{z-index:2;position:absolute;bottom:0;min-width:100%;width:100%;padding:20px 0;background-color:rgba(22,22,22,0.9);border-top:4px solid rgba(25,177,135,0.9);text-align:center;font-size:13px;color:#cbcbcb}
-@media(max-width:650px){.site-wrapper .page-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
-.site-wrapper .page-wrapper .content-wrapper{padding:20px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
-.site-wrapper .page-wrapper .content-wrapper .logo-wrapper{min-width:80px;margin-right:20px}
-.site-wrapper .page-wrapper .content-wrapper .main-content .title .page-title{font-size:18px;margin-bottom:10px}
-.site-wrapper .page-wrapper .content-wrapper .main-content .description{font-size:13px;line-height:1.6;display:none}
-.site-wrapper .page-wrapper .contacts-wrapper{width:100%;background-color:rgba(231,231,231,0.7)}
-.site-wrapper .page-wrapper .contacts-wrapper .contact{padding:20px}
-.site-wrapper .page-wrapper .contacts-wrapper .contact p{font-size:12px;color:#121212}
-.site-wrapper .page-wrapper .contacts-wrapper .contact .contacts-description{display:none}
-.site-wrapper .footer-wrapper{padding:20px 0;text-align:center;font-size:11px}
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700|Roboto:400,700");body,html{padding:0;margin:0}
+p{margin-top:0}
+p:last-child{margin-bottom:0}
+.ccs-site-wrapper{position:relative;overflow:hidden;font-family:"Roboto",sans-serif}
+.ccs-site-wrapper .ccs-video-overlay{display:block;position:fixed;left:0;top:0;overflow:hidden;z-index:-999;min-width:100%;min-height:100%;height:100%;width:100%}
+.ccs-site-wrapper #ccs-video{position:fixed;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);min-width:100%;min-height:100%;width:auto;height:auto;overflow:hidden;z-index:-1000}
+.ccs-site-wrapper .ccs-content-wrapper{z-index:2;position:fixed;top:0;left:0;bottom:0;width:100%;min-width:100%;color:white;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;margin:0 auto;padding:40px 20px;background-color:rgba(22,22,22,0.7)}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-logo{margin-right:20px;max-width:140px;min-width:80px;width:140px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-status{font-family:"Raleway",sans-serif;font-weight:300;color:#19b187;margin-bottom:10px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-page-title{font-family:"Raleway",sans-serif;font-weight:700;margin-bottom:20px;color:#fff;margin:0;margin-bottom:10px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-description{font-size:14px;line-height:1.6}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper{background-color:rgba(25,177,135,0.9);padding:20px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper p{color:#fff;font-size:13px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper .ccs-phone{margin-bottom:5px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper span{color:#161616;font-weight:700}
+.ccs-site-wrapper .ccs-footer-wrapper{z-index:3;position:fixed;bottom:0;min-width:100%;width:100%;padding:20px 0;background-color:rgba(22,22,22,0.9);border-top:4px solid rgba(25,177,135,0.9);text-align:center;font-size:13px;color:#cbcbcb}
+@media(max-width:650px){.ccs-site-wrapper .ccs-content-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content{padding:20px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-logo{min-width:80px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-page-title{font-size:18px;margin-bottom:10px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-description{display:none}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper{width:100%;background-color:rgba(231,231,231,0.7);padding:20px}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper p{font-size:12px;color:#121212}
+.ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper .ccs-contacts-description{display:none}
+.ccs-site-wrapper .ccs-footer-wrapper{padding:20px 0;text-align:center;font-size:11px}
 }
