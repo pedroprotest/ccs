@@ -44,7 +44,7 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
   <script type='text/javascript' src='<?php echo plugins_url('assets/js/main.js',dirname(__FILE__)); ?>'></script>
 
   <?php // wordpress head functions ?>
-  <?php wp_head(); ?>
+  <?php //wp_head(); ?>
   <?php // end of wordpress head ?>
 
   <?php // drop Google Analytics Here ?>
@@ -131,6 +131,6 @@ if( !empty(get_theme_mod( 'ccs_favicon')) ) {
       <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
     </footer><!-- Footer-Wrapper-End -->
   </div><!-- site-Wrapper-End -->
- <?php wp_footer(); ?>
+ <?php //wp_footer(); ?>
 </body>
 </html>
