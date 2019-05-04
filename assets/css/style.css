@@ -3,10 +3,10 @@
 .site-wrapper .page-wrapper{z-index:2;position:absolute;top:0;left:0;bottom:0;width:100%;min-width:100%;color:white;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 .site-wrapper .page-wrapper .content-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;margin:0 auto;padding:40px 20px;background-color:rgba(22,22,22,0.7)}
 .site-wrapper .page-wrapper .content-wrapper .logo-wrapper{margin-right:20px}
-.site-wrapper .page-wrapper .content-wrapper .logo-wrapper img{max-width:140px;min-width:80px}
+.site-wrapper .page-wrapper .content-wrapper .logo-wrapper img{max-width:140px;min-width:80px;width:140px}
 .site-wrapper .page-wrapper .content-wrapper .main-content .status{font-family:"Raleway",sans-serif;font-weight:300;color:#19b187;margin-bottom:10px}
-.site-wrapper .page-wrapper .content-wrapper .main-content .page-title{font-family:"Raleway",sans-serif;font-weight:700;margin-bottom:20px;color:#fff}
-.site-wrapper .page-wrapper .content-wrapper .main-content .page-title::after{display:none}
+.site-wrapper .page-wrapper .content-wrapper .main-content .ccs-page-title{font-family:"Raleway",sans-serif;font-weight:700;margin-bottom:20px;color:#fff}
+.site-wrapper .page-wrapper .content-wrapper .main-content .ccs-page-title::after{display:none}
 .site-wrapper .page-wrapper .content-wrapper .main-content .description{font-size:14px;line-height:1.6}
 .site-wrapper .page-wrapper .contacts-wrapper{background-color:rgba(25,177,135,0.9)}
 .site-wrapper .page-wrapper .contacts-wrapper .contact{padding:20px}
