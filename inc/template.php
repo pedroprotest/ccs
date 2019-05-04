@@ -98,9 +98,9 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
         <main class="ccs-content-details">
           <?php
             if( get_theme_mod('ccs_status') == 1 ) {
-              echo '<p class="ccs-status">' . __('Brevemente', 'ccs'). '</p>';
+              echo '<p class="ccs-status" style="color:' . esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ) . ';">' . __('Brevemente', 'ccs'). '</p>';
             } elseif ( get_theme_mod('ccs_status') == 2 ) {
-              echo '<p class="status">' . __('Em Manutenção', 'ccs'). '</p>';
+              echo '<p class="status" style="color:'. esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ) . ';">' . __('Em Manutenção', 'ccs'). '</p>';
             }
             if ( !empty( get_theme_mod('ccs_page_heading')) ) {
               echo '<h1 class="ccs-page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
@@ -111,7 +111,7 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
           ?>
         </main><!-- Main-Content-End -->
       </div><!-- Content-Wrapper-End -->
-      <div class="ccs-contacts-wrapper">
+      <div class="ccs-contacts-wrapper" style="background-color:<?php echo esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ); ?>;">
         <?php
           echo '<p class="ccs-contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>';
           echo '<p class="css-phone"><span>'. __('Telefone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>';
@@ -121,7 +121,7 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
 
 
     </div><!-- Page-Wrapper-End -->
-    <footer class="ccs-footer-wrapper">
+    <footer class="ccs-footer-wrapper" style="border-top-color:<?php echo esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ); ?>;">
       <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
     </footer><!-- Footer-Wrapper-End -->
   </div><!-- site-Wrapper-End -->

@@ -36,14 +36,28 @@ $wp_customize->add_setting( 'ccs_preview', array(
 ) );
 
 // Control - Preview
-$wp_customize->add_control( 'ccs_preview', array(
+/*$wp_customize->add_control( 'ccs_preview', array(
   'label'       => esc_html__( 'Preview Coming Soon Page?', 'ccs' ),
   'description' => esc_html__( 'Refresh this page page after saving in order to see the change.  This is used to preview your coming soon page in the theme customizer.', 'ccs' ),
   'section'     => 'ccs_section_general',
   'type'        => 'checkbox',
   'priority'    => 20,
   )
-);
+);*/
+
+// Setting  - Primary Color
+$wp_customize->add_setting( 'ccs_primary_color', array(
+  'default' => '#19b187',
+  'sanitize_callback' => 'ccs_sanitize_text',
+) );
+
+// Control - Primary Color
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ccs_primary_color', array(
+  'label'    => esc_html__( 'Primary Color', 'ccs' ),
+  'section'  => 'ccs_section_background',
+  'priority' => 20,
+) ) );
+
 
 // Setting - Custom ccs
 $wp_customize->add_setting( 'ccs_custom_ccs', array(
