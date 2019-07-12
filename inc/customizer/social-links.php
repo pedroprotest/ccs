@@ -2,7 +2,7 @@
 
 // Section - Social Links
 $wp_customize->add_section( 'ccs_section_social', array(
-  'title'          => esc_html__( 'Social Links', 'ccs' ),
+  'title'          => esc_html__( 'Redes Socias', 'ccs' ),
   'panel'          => 'ccs_general_panel', // Not typically needed.
   'priority'       => 6,
   )

@@ -124,15 +124,11 @@ msgstr ""
 msgid "Maintenance"
 msgstr ""
 
-#: inc/customizer/general-settings.php:40
-msgid "Preview Coming Soon Page?"
+#: inc/customizer/general-settings.php:56
+msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer/general-settings.php:41
-msgid "Refresh this page page after saving in order to see the change.  This is used to preview your coming soon page in the theme customizer."
-msgstr ""
-
-#: inc/customizer/general-settings.php:55
+#: inc/customizer/general-settings.php:69
 msgid "Custom CSS"
 msgstr ""
 
@@ -192,18 +188,18 @@ msgstr ""
 msgid "Google+"
 msgstr ""
 
-#: inc/template.php:100
+#: inc/template.php:101
 msgid "Brevemente"
 msgstr ""
 
-#: inc/template.php:102
+#: inc/template.php:103
 msgid "Em Manutenção"
 msgstr ""
 
-#: inc/template.php:116
+#: inc/template.php:117
 msgid "Telefone:"
 msgstr ""
 
-#: inc/template.php:117
+#: inc/template.php:118
 msgid "Email:"
 msgstr ""

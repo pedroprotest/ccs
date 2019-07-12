@@ -65,10 +65,62 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
     background-size: cover;
     <?php
       if( !empty(get_theme_mod( 'ccs_background_image')) ) {
-        echo 'background-image:url('. esc_attr(get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) . '../assets/images/bg.jpg' )) . ')';
+        echo 'background-image:url('. esc_attr(get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) . '../assets/images/bg.jpg' )) . ');';
       }
     ?>
   }
+
+  .ccs-site-wrapper .ccs-content-wrapper {
+    color: white
+  }
+
+  .ccs-site-wrapperv .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-page-title {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_page_heading_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_heading_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  .ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-description {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper p {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_footer_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_footer_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper a {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper span {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  .ccs-site-wrapper .ccs-footer-wrapper {
+    <?php
+    if( !empty(get_theme_mod( 'ccs_footer_background_color')) ) {
+      echo 'background-color: ' . esc_attr( get_theme_mod( 'ccs_footer_background_color', '#3D3D3D' ) ) . ';';
+    }
+    ?>
+  }
+
   <?php echo wp_kses( get_theme_mod( 'ccs_custom_css' ), true ); ?>
   </style>
 </head>
@@ -79,9 +131,9 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
     <?php
       if( !empty($videoMp4) ) { ?>
         <video loop autoplay muted id="ccs-video">
-          <source src="<?php echo $videoMp4; ?>" type="video/mp4">
-          <source src="<?php echo $videoWebm; ?>" type="video/webm">
-          <source src="<?php echo $videoOgv; ?>" type="video/ogv">
+          <source src="<?php echo esc_url($videoMp4); ?>" type="video/mp4">
+          <source src="<?php echo esc_url($videoWebm); ?>" type="video/webm">
+          <source src="<?php echo esc_url($videoOgv); ?>" type="video/ogv">
         </video>
         <script>
             document.getElementById('ccs-video').play();
