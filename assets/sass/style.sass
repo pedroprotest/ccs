@@ -13,11 +13,11 @@ p
   &:last-child
     margin-bottom: 0
 
-.ccs-site-wrapper
+.crew-cs-site-wrapper
   position: relative
   overflow: hidden
   font-family: $secondaryFont
-  .ccs-video-overlay
+  .crew-cs-video-overlay
     display: block
     position: fixed
     left: 0
@@ -28,7 +28,7 @@ p
     min-height: 100%
     height: 100%
     width: 100%
-  #ccs-video
+  #crew-cs-video
     position: fixed
     top: 50%
     left: 50%
@@ -40,7 +40,7 @@ p
     overflow: hidden
     z-index: -1000
 
-  .ccs-content-wrapper
+  .crew-cs-content-wrapper
     z-index: 2
     position: fixed
     top: 0
@@ -48,12 +48,12 @@ p
     bottom: 0
     width: 100%
     min-width: 100%
-    color: white
     display: flex
     align-items: center
     align-content: center
     justify-content: center
-    .ccs-content
+    .crew-cs-conent-bg
+    .crew-cs-content
       display: flex
       align-items: center
       align-content: flex-start
@@ -61,85 +61,73 @@ p
       margin: 0 auto
       padding: 40px 20px
       background-color: rgba(22, 22, 22, 0.7)
-      .ccs-logo
+      .crew-cs-logo
         margin-right: 20px
         max-width: 140px
         min-width: 80px
         width: 140px
-      .ccs-content-details
-        .ccs-status
+      .crew-cs-content-details
+        .crew-cs-status
           font-family: $primaryFont
           font-weight: 300
-          color: rgba(25, 177, 135, 1)
           margin-bottom: 10px
-        .ccs-page-title
+        .crew-cs-page-title
           font-family: $primaryFont
           font-weight: 700
-          margin-bottom: 20px
-          color: #fff
           margin: 0
           margin-bottom: 10px
           &::after
             display: none
-        .ccs-description
+        .crew-cs-description
           font-size: 14px
           line-height: 1.6
-          color: #fff
 
-    .ccs-contacts-wrapper
-      background-color: rgba(25, 177, 135, 0.9)
+    .crew-cs-contacts-wrapper
       padding: 20px
       p
         color: #fff
         font-size: 13px
-      .ccs-phone
-        margin-bottom: 5px
+        margin-bottom: 0px
       span
-        color: #161616
         font-weight: 700
-  .ccs-footer-wrapper
+  .crew-cs-footer-wrapper
     z-index: 3
     position: fixed
     bottom: 0
     min-width: 100%
     width: 100%
-    padding: 20px 0
-    background-color: rgba(22, 22, 22, 0.9)
+    padding: 15px 0
     border-top: 4px solid rgba(25, 177, 135, 0.9)
     text-align: center
-    font-size: 13px
-    color: #cbcbcb
+    font-size: 11px
 
 @media (max-width: 650px)
-  .ccs-site-wrapper
-    .ccs-content-wrapper
+  .crew-cs-site-wrapper
+    .crew-cs-content-wrapper
       flex-direction: column
       align-items: center
       align-content: center
       justify-content: center
-      .ccs-content
+      .crew-cs-content
         padding: 20px
         align-items: center
         align-content: center
         justify-content: center
-        .ccs-logo
+        .crew-cs-logo
           min-width: 80px
-        .ccs-content-details
-          .ccs-page-title
+        .crew-cs-content-details
+          .crew-cs-page-title
             font-size: 18px
             margin-bottom: 10px
-          .ccs-description
+          .crew-cs-description
             display: none
-      .ccs-contacts-wrapper
+      .crew-cs-contacts-wrapper
         width: 100%
-        background-color: rgba(231, 231, 231, 0.7)
         padding: 20px
         p
           font-size: 12px
-          color: rgb(18, 18, 18)
-        .ccs-contacts-description
+        .crew-cs-contacts-description
           display: none
-    .ccs-footer-wrapper
-      padding: 20px 0
+    .crew-cs-footer-wrapper
+      padding: 10px 0
       text-align: center
-      font-size: 11px

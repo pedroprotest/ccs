@@ -16,16 +16,16 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: crew_cs.php:78
+#: ccs.php:79
 msgid "Coming Soon Mode Active"
 msgstr ""
 
-#: crew_cs.php:80
+#: ccs.php:81
 msgid "Maintenance Mode Active"
 msgstr ""
 
 #: inc/customizer.php:8
-msgid "Coming Soon Settings"
+msgid "Modo de Manutenção"
 msgstr ""
 
 #: inc/customizer/background.php:5
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Texto no Rodapé"
 msgstr ""
 
-#: inc/customizer/footer.php:45
+#: inc/customizer/footer.php:53
 msgid "Cor de Fundo"
 msgstr ""
 
@@ -204,18 +204,18 @@ msgstr ""
 msgid "Google+"
 msgstr ""
 
-#: inc/template.php:153
+#: inc/template.php:175
 msgid "Brevemente"
 msgstr ""
 
-#: inc/template.php:155
+#: inc/template.php:177
 msgid "Em Manutenção"
 msgstr ""
 
-#: inc/template.php:169
+#: inc/template.php:191
 msgid "Telefone:"
 msgstr ""
 
-#: inc/template.php:170
+#: inc/template.php:192
 msgid "Email:"
 msgstr ""

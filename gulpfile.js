@@ -29,10 +29,10 @@
 
     // Tranlate Settings
     translateOpts = {
-      textDomain     : 'ccs',
-      destFile       : 'ccs.pot',
+      textDomain     : 'crew_cs',
+      destFile       : 'crew_cs.pot',
       destDir        : './languages',
-      packageName    : 'ccs',
+      packageName    : 'crew_cs',
       bugReport      : 'https://crew.pt/contact/',
       lastTranslator : 'Pedro Protest <dev@crew.pt>',
       team           : 'Crew <info@crew.pt>'

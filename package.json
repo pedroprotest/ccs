@@ -1,5 +1,5 @@
 {
-  "name": "ccs",
+  "name": "crew_cs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crew-pt/ccs.git"
+    "url": "git+https://github.com/crew-pt/crew_cs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/crew-pt/ccs/issues"
+    "url": "https://github.com/crew-pt/crew_cs/issues"
   },
-  "homepage": "https://github.com/crew-pt/ccs#readme",
+  "homepage": "https://github.com/crew-pt/crew_cs#readme",
   "devDependencies": {
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.1",

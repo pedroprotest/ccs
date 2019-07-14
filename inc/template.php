@@ -2,14 +2,14 @@
 
 $favicon = '';
 
-if( !empty(get_theme_mod( 'ccs_favicon')) ) {
-  $favicon = esc_url(get_theme_mod( 'ccs_favicon'));
+if( !empty(get_theme_mod( 'crew_cs_favicon')) ) {
+  $favicon = esc_url(get_theme_mod( 'crew_cs_favicon'));
 }
 
-$videoCover = get_theme_mod( 'ccs_video_cover' );
-$videoMp4   = get_theme_mod( 'ccs_video_mp4' );
-$videoWebm  = get_theme_mod( 'ccs_video_webm' );
-$videoOgv   = get_theme_mod( 'ccs_video_ogv' );
+$videoCover = get_theme_mod( 'crew_cs_video_cover' );
+$videoMp4   = get_theme_mod( 'crew_cs_video_mp4' );
+$videoWebm  = get_theme_mod( 'crew_cs_video_webm' );
+$videoOgv   = get_theme_mod( 'crew_cs_video_ogv' );
 
 ?>
 
@@ -55,7 +55,7 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
 
   <style type="text/css">
   body {
-    background-color:<?php echo esc_attr( get_theme_mod( 'ccs_background_color', '#f5f5f5' ) ); ?>;
+    background-color:<?php echo esc_attr( get_theme_mod( 'crew_cs_background_color', '#f5f5f5' ) ); ?>;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -64,119 +64,164 @@ $videoOgv   = get_theme_mod( 'ccs_video_ogv' );
     -o-background-size: cover;
     background-size: cover;
     <?php
-      if( !empty(get_theme_mod( 'ccs_background_image')) ) {
-        echo 'background-image:url('. esc_attr(get_theme_mod( 'ccs_background_image', plugin_dir_url( __FILE__ ) . '../assets/images/bg.jpg' )) . ');';
+      if( !empty(get_theme_mod( 'crew_cs_background_image')) ) {
+        echo 'background-image:url('. esc_attr(get_theme_mod( 'crew_cs_background_image', plugin_dir_url( __FILE__ ) . '../assets/images/bg.jpg' )) . ');';
       }
     ?>
   }
 
-  .ccs-site-wrapper .ccs-content-wrapper {
-    color: white
-  }
-
-  .ccs-site-wrapperv .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-page-title {
+  /*--- Conteudo Principal  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-content {
     <?php
-    if( !empty(get_theme_mod( 'ccs_page_heading_color')) ) {
-      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_heading_color', '#fff' ) ) . ';';
+    if( !empty(get_theme_mod( 'crew_cs_page_background_color')) ) {
+      echo 'background-color: ' . esc_attr( get_theme_mod( 'crew_cs_page_background_color', '#1D1D1D' ) ) . ';';
     }
     ?>
   }
 
-  .ccs-site-wrapper .ccs-content-wrapper .ccs-content .ccs-content-details .ccs-description {
+  /*--- Status  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-content .crew-cs-content-details .crew-cs-status {
     <?php
-    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
-      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    if( !empty(get_theme_mod( 'crew_cs_status_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_status_color', '#fff' ) ) . ';';
     }
     ?>
   }
 
-  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper p {
+  /*--- Titlo Principal  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-content .crew-cs-content-details .crew-cs-page-title {
     <?php
-    if( !empty(get_theme_mod( 'ccs_footer_text_color')) ) {
-      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_footer_text_color', '#fff' ) ) . ';';
-    }
-    ?>
-  }
-  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper a {
-    <?php
-    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
-      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    if( !empty(get_theme_mod( 'crew_cs_page_heading_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_page_heading_color', '#fff' ) ) . ';';
     }
     ?>
   }
 
-  .ccs-site-wrapper .ccs-content-wrapper .ccs-contacts-wrapper span {
+  /*--- Descrição Principal  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-content .crew-cs-content-details .crew-cs-description {
     <?php
-    if( !empty(get_theme_mod( 'ccs_page_text_color')) ) {
-      echo 'color: ' . esc_attr( get_theme_mod( 'ccs_page_text_color', '#fff' ) ) . ';';
+    if( !empty(get_theme_mod( 'crew_cs_page_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_page_text_color', '#fff' ) ) . ';';
     }
     ?>
   }
 
-  .ccs-site-wrapper .ccs-footer-wrapper {
+  /*--- Fundo Contactos  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-contacts-wrapper {
     <?php
-    if( !empty(get_theme_mod( 'ccs_footer_background_color')) ) {
-      echo 'background-color: ' . esc_attr( get_theme_mod( 'ccs_footer_background_color', '#3D3D3D' ) ) . ';';
+    if( !empty(get_theme_mod( 'crew_cs_contacts_background_color')) ) {
+      echo 'background-color: ' . esc_attr( get_theme_mod( 'crew_cs_contacts_background_color', '#fff' ) ) . ';';
     }
     ?>
   }
 
-  <?php echo wp_kses( get_theme_mod( 'ccs_custom_css' ), true ); ?>
+  /*--- Paragrafos dos Contactos  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-contacts-wrapper p {
+    <?php
+    if( !empty(get_theme_mod( 'crew_cs_contacts_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_contacts_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  /*--- Links nos Contactos  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-contacts-wrapper .link {
+    <?php
+    if( !empty(get_theme_mod( 'crew_cs_contacts_links_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_contacts_links_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  /*--- Span nos Contactos  ---*/
+  .crew-cs-site-wrapper .crew-cs-content-wrapper .crew-cs-contacts-wrapper span {
+    <?php
+    if( !empty(get_theme_mod( 'crew_cs_contacts_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_contacts_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  /*--- Fundo do Rodapé  ---*/
+  .crew-cs-site-wrapper .crew-cs-footer-wrapper {
+    <?php
+    if( !empty(get_theme_mod( 'crew_cs_footer_background_color')) ) {
+      echo 'background-color: ' . esc_attr( get_theme_mod( 'crew_cs_footer_background_color', '#3D3D3D' ) ) . ';';
+    }
+    if( !empty(get_theme_mod( 'crew_cs_footer_border_color')) ) {
+      echo 'border-color: ' . esc_attr( get_theme_mod( 'crew_cs_footer_border_color', '#3D3D3D' ) ) . ';';
+    }
+    ?>
+  }
+
+  /*--- Texto do Rodapé  ---*/
+  .crew-cs-site-wrapper .crew-cs-footer-wrapper p {
+    <?php
+    if( !empty(get_theme_mod( 'crew_cs_footer_text_color')) ) {
+      echo 'color: ' . esc_attr( get_theme_mod( 'crew_cs_footer_text_color', '#fff' ) ) . ';';
+    }
+    ?>
+  }
+
+  <?php echo wp_kses( get_theme_mod( 'crew_cs_custom_css' ), true ); ?>
   </style>
 </head>
 
 <body>
-  <div class="ccs-site-wrapper">
-    <div class="ccs-video-overlay" style="background: url('<?php echo plugins_url( '../assets/images/dottedOverlay3x3.png', __FILE__ ); ?>') left top repeat"></div><!-- Video-Overlay-End -->
+  <div class="crew-cs-site-wrapper">
+    <div class="crew-cs-video-overlay" style="background: url('<?php echo plugins_url( '../assets/images/dottedOverlay3x3.png', __FILE__ ); ?>') left top repeat"></div><!-- Video-Overlay-End -->
     <?php
       if( !empty($videoMp4) ) { ?>
-        <video loop autoplay muted id="ccs-video">
+        <video loop autoplay muted id="crew-cs-video">
           <source src="<?php echo esc_url($videoMp4); ?>" type="video/mp4">
           <source src="<?php echo esc_url($videoWebm); ?>" type="video/webm">
           <source src="<?php echo esc_url($videoOgv); ?>" type="video/ogv">
         </video>
         <script>
-            document.getElementById('ccs-video').play();
+            document.getElementById('crew-cs-video').play();
         </script>
       <?php }
     ?>
-    <div class="ccs-content-wrapper">
-      <div class="ccs-content">
-        <?php
-          if ( !empty(get_theme_mod('ccs_logo') )) {
-            echo '<img src="' . esc_attr(get_theme_mod( 'ccs_logo')) . '" class="ccs-logo">';
-          }
-        ?>
-        <main class="ccs-content-details">
+    <div class="crew-cs-content-wrapper">
+      <div class="crew-cs-content-background">
+        <div class="crew-cs-content">
           <?php
-            if( get_theme_mod('ccs_status') == 1 ) {
-              echo '<p class="ccs-status" style="color:' . esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ) . ';">' . __('Brevemente', 'ccs'). '</p>';
-            } elseif ( get_theme_mod('ccs_status') == 2 ) {
-              echo '<p class="status" style="color:'. esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ) . ';">' . __('Em Manutenção', 'ccs'). '</p>';
-            }
-            if ( !empty( get_theme_mod('ccs_page_heading')) ) {
-              echo '<h1 class="ccs-page-title">' . get_theme_mod('ccs_page_heading') . '</h1>';
-            }
-            if ( !empty( get_theme_mod('ccs_text')) ) {
-              echo '<p class="ccs-description">' . get_theme_mod('ccs_text') . '</p>';
+            if ( !empty(get_theme_mod('crew_cs_logo') )) {
+              echo '<img src="' . esc_attr(get_theme_mod( 'crew_cs_logo')) . '" class="crew-cs-logo">';
             }
           ?>
-        </main><!-- Main-Content-End -->
-      </div><!-- Content-Wrapper-End -->
-      <div class="ccs-contacts-wrapper" style="background-color:<?php echo esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ); ?>;">
-        <?php
-          echo '<p class="ccs-contacts-description">' . wp_kses(get_theme_mod('ccs_description', 'For more info:'), true) . '</p>';
-          echo '<p class="css-phone"><span>'. __('Telefone:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_phone', '+ 351 987 654 321'), true) . '</p>';
-          echo '<p class="cscs-email"><span>'. __('Email:', 'ccs') . '</span> ' . wp_kses(get_theme_mod('ccs_email', 'you@email.com'), true) . '</p>';
-        ?>
-      </div><!-- Contacts-Wrapper-End -->
+          <main class="crew-cs-content-details">
+            <?php
+              if( get_theme_mod('crew_cs_status') == 1 ) {
+                echo '<p class="crew-cs-status">' . __('Brevemente', 'crew_cs'). '</p>';
+              } elseif ( get_theme_mod('crew_cs_status') == 2 ) {
+                echo '<p class="crew-cs-status">' . __('Em Manutenção', 'crew_cs'). '</p>';
+              }
+              if ( !empty( get_theme_mod('crew_cs_page_heading')) ) {
+                echo '<h1 class="crew-cs-page-title">' . get_theme_mod('crew_cs_page_heading') . '</h1>';
+              }
+              if ( !empty( get_theme_mod('crew_cs_text')) ) {
+                echo '<p class="crew-cs-description">' . get_theme_mod('crew_cs_text') . '</p>';
+              }
+            ?>
+          </main><!-- Main-Content-End -->
+        </div><!-- Content-Wrapper-End -->
+        <div class="crew-cs-contacts-wrapper">
+          <?php
+            echo '<p class="crew-cs-contacts-description">' . wp_kses(get_theme_mod('crew_cs_description', 'For more info:'), true) . '</p>';
+            echo '<p class="crew-cs-phone"><span class="link">'. __('Telefone:', 'crew_cs') . '</span> ' . wp_kses(get_theme_mod('crew_cs_phone', '+ 351 987 654 321'), true) . '</p>';
+            echo '<p class="crew-cs-email"><span class="link">'. __('Email:', 'crew_cs') . '</span> ' . wp_kses(get_theme_mod('crew_cs_email', 'you@email.com'), true) . '</p>';
+          ?>
+        </div><!-- Contacts-Wrapper-End -->
+      </div>
+
 
 
     </div><!-- Page-Wrapper-End -->
-    <footer class="ccs-footer-wrapper" style="border-top-color:<?php echo esc_attr( get_theme_mod( 'ccs_primary_color', '#19b187' ) ); ?>;">
-      <?php echo wp_kses(get_theme_mod( 'ccs_footer' ), true); ?>
+    <footer class="crew-cs-footer-wrapper">
+      <p><?php echo wp_kses(get_theme_mod( 'crew_cs_footer' ), true); ?></p>
     </footer><!-- Footer-Wrapper-End -->
   </div><!-- site-Wrapper-End -->
-<?php wp_footer(); z?>
+<?php wp_footer();?>
 </body>
 </html>

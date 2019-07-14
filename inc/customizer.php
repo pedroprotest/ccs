@@ -2,12 +2,13 @@
 // Customizer Options
 
 // Theme Customizer Panel
-function ccs_customizer( $wp_customize ) {
-  $wp_customize->add_panel( 'ccs_general_panel', array(
+function crew_cs_customizer( $wp_customize ) {
+  $wp_customize->add_panel( 'crew_cs_general_panel', array(
     'priority' => 1,
-    'title'    => esc_html__( 'Coming Soon Settings', 'ccs'),
+    'title'    => esc_html__( 'Modo de Manutenção', 'crew_cs'),
   ));
 
+  require_once( 'customizer/alpha-color-picker/alpha-color-picker.php' );
   require_once( 'customizer/general-settings.php' ); // 1
   require_once( 'customizer/page-settings.php' ); // 2
   require_once( 'customizer/branding.php' ); // 3
@@ -20,13 +21,13 @@ function ccs_customizer( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'ccs_customizer' );
+add_action( 'customize_register', 'crew_cs_customizer' );
 
-function ccs_sanitize_text( $input ) {
+function crew_cs_sanitize_text( $input ) {
   return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function ccs_sanitize_radio( $input, $setting ) {
+function crew_cs_sanitize_radio( $input, $setting ) {
 
   global $wp_customize;
 
