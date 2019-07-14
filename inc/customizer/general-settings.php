@@ -47,7 +47,7 @@ $wp_customize->add_setting( 'crew_cs_preview', array(
 
 // Setting  - Primary Color
 $wp_customize->add_setting( 'crew_cs_status_color', array(
-  'default' => '#19b187',
+  'default' => '#0180bb',
   'sanitize_callback' => 'crew_cs_sanitize_text',
 ) );
 

@@ -52,7 +52,7 @@ $wp_customize->add_control( 'crew_cs_email', array(
 
 /*----------- Contacts Background Color -----------*/
 $wp_customize->add_setting( 'crew_cs_contacts_background_color', array(
-  'default'     => 'rgba(19,19,19,.8)',
+  'default'     => 'rgba(1,128,187,.9)',
 ) );
 
 $wp_customize->add_control(new Customize_Alpha_Color_Control($wp_customize, 'crew_cs_contacts_background_color', array(
@@ -70,7 +70,7 @@ $wp_customize->add_control(new Customize_Alpha_Color_Control($wp_customize, 'cre
 
 /*----------- Contacts Text Color -----------*/
 $wp_customize->add_setting( 'crew_cs_contacts_text_color', array(
-  'default' => '#19b187',
+  'default' => '#FFF',
   'sanitize_callback' => 'crew_cs_sanitize_text',
 ) );
 
@@ -82,7 +82,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'crew_c
 
 /*----------- Contacts Links Color -----------*/
 $wp_customize->add_setting( 'crew_cs_contacts_links_color', array(
-  'default' => '#19b187',
+  'default' => '#000',
   'sanitize_callback' => 'crew_cs_sanitize_text',
 ) );
 

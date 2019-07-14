@@ -36,7 +36,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'crew_c
 
 /*----------- Footer Background Color -----------*/
 $wp_customize->add_setting( 'crew_cs_footer_background_color', array(
-  'default'     => 'rgba(51,51,51,.7)',
+  'default'     => 'rgba(0,0,0,.8)',
 ) );
 
 $wp_customize->add_control(new Customize_Alpha_Color_Control($wp_customize, 'crew_cs_footer_background_color', array(
@@ -54,7 +54,7 @@ $wp_customize->add_control(new Customize_Alpha_Color_Control($wp_customize, 'cre
 
 /*----------- Footer Border Color -----------*/
 $wp_customize->add_setting( 'crew_cs_footer_border_color', array(
-  'default'     => 'rgba(5,97,156,.8)',
+  'default'     => 'rgba(1,128,187,.8)',
 ) );
 
 $wp_customize->add_control(new Customize_Alpha_Color_Control($wp_customize, 'crew_cs_footer_border_color', array(

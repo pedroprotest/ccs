@@ -36,6 +36,7 @@ $videoOgv   = get_theme_mod( 'crew_cs_video_ogv' );
   <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
   <!-- <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png"> -->
   <link rel="icon" href="<?php echo $favicon ?>">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $favicon ?>"/>
 
   <!--[if IE]>
   <link rel="shortcut icon" href="<?php echo $favicon ?>">
