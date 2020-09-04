@@ -29,6 +29,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglifycss": "^1.1.0",
     "gulp-wp-pot": "^2.3.5",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   }
 }
